@@ -1,0 +1,42 @@
+
+GOALS
+<!-- Describe how the DOM works as a tree -->
+
+<!-- Define the computer science version of "Tree" -->
+The DOM works basically like a tree, except we usually talk about the root as being at the top of the DOM and the
+leaves being the most deeply nested HTML elements. So basically, we can imagine a tree upside down.
+
+
+<!-- Ask the DOM to find or "select" an HTML element or elements in the rendered page -->
+document.getElementById()
+document.getElementsByClassName()
+document.getElementsByTagName()
+
+<!-- Finding a Node Without Knowing Anything About It -->
+<main>
+    <div>
+        <div>
+            <p>Hello!</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>Hello!</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>Hello!</p>
+        </div>
+    </div>
+</main>
+
+<!-- get the main element -->
+const main = document.getElementsByTagName("main")[0];
+<!-- get the children by using main.children (returns HTML collection) so we get second child-->
+const secondChild = main.children[1];
+<!-- get <p> element...callit directly on the second child -->
+const p = secondChild.getElementsByTagNAme("p")[0];
+<!-- change an attribute on the p node  -->
+p.textContent = "Goodbye!";
+
